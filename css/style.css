@@ -459,6 +459,10 @@ section{
 .contact form .box:focus{
     box-shadow: var(--box-shadow-inset);
 }
+.center{
+    display: flex;
+    justify-content: center;
+}
 
 .credits{
     font-size: 2rem;
