@@ -193,15 +193,15 @@ section{
     padding-bottom: .5rem;
 }
 
-.home .share{
+.contact .share{
     position: relative;
-    top: 10rem;
+    top: 2rem;
     border-radius: .5rem;
     box-shadow: var(--box-shadow);
     padding:1rem;
 }
 
-.home .share a{
+.contact .share a{
     height: 5rem;
     width: 5rem;
     line-height: 5rem;
@@ -212,9 +212,17 @@ section{
     border-radius: .5rem;
 }
 
-.home .share a:hover{
+.contact .share a:hover{
     box-shadow: var(--box-shadow-inset);
     color:var(--green);
+}
+
+.contact{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .about .row{
@@ -330,7 +338,7 @@ section{
 
 .services .box-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(46rem, 1fr));
     gap:2rem;
 }
 
@@ -345,7 +353,7 @@ section{
 
 .services .box-container .box i{
     font-size:4rem;
-    padding-bottom: 5rem;
+    padding-bottom: 4rem;
     color:#fff;
 }
 
@@ -353,6 +361,12 @@ section{
     font-size:2rem;
     padding-bottom: 1rem;
     color:var(--black);
+}
+
+.services .box-container .box h4{
+    font-size:1.2rem;
+    padding-bottom: .5rem;
+    color:var(--light-color);
 }
 
 .services .box-container .box p{
@@ -381,14 +395,74 @@ section{
     color:#fff;
 }
 
+.skills .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(46rem, 1fr));
+    gap:2rem;
+}
+
+.skills .box-container .box{
+    padding:2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    z-index: 0;
+    overflow:hidden;
+}
+
+.skills .box-container .box i{
+    font-size:4rem;
+    padding-bottom: 4rem;
+    color:#fff;
+}
+
+.skills .box-container .box h3{
+    font-size:1.5rem;
+    padding-bottom: 0rem;
+    color:var(--black);
+}
+
+.skills .box-container .box h4{
+    font-size:1rem;
+    padding-bottom: .5rem;
+    color:var(--black);
+}
+
+.skills .box-container .box p{
+    font-size:1.4rem;
+    line-height: 1.8;
+    padding-bottom: 1rem;
+    color:var(--light-color);
+}
+
+.skills .box-container .box::before{
+    content: '';
+    position: absolute;
+    top:0; left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--green);
+    z-index: -1;
+    clip-path: circle(9rem at 5% 0%);
+    transition: .3s linear;
+}
+
+.skills .box-container .box:hover::before{    
+    clip-path: circle(100%);
+}
+
+.skills .box-container .box:hover > *{
+    color:#fff;
+}
+
 .portfolio .box-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(37rem, 1fr));
     gap:2rem;
 }
 
 .portfolio .box-container .box{
-    height: 25rem;
+    height: 30rem;
     border-radius: .5rem;
     overflow:hidden;
     box-shadow: var(--box-shadow);
@@ -418,12 +492,17 @@ section{
 }
 
 .portfolio .box-container .box .content h3{
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color:var(--black);
     text-transform: uppercase;
     transform: translateY(-5rem);
     opacity: 0;
     transition-delay: .3s;
+}
+
+.portfolio .box-container .box .content p{
+    font-size: 1.5rem;
+    color:var(--black);
 }
 
 .portfolio .box-container .box:hover .content h3{

@@ -50,6 +50,18 @@ function showValues() {
   
 }
 
+function downloadPDF() {
+  // URL of your PDF file (can be local or online)
+  const pdfUrl = 'document/resume.pdf'; // Example: 'resume.pdf' or 'https://example.com/file.pdf'
+  
+  const link = document.createElement('a');
+  link.href = pdfUrl;
+  link.download = 'resume.pdf'; // Name the file as it will be saved
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
 const userAction = async (data) => {
   console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
   const response = await fetch(
