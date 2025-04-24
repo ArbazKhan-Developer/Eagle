@@ -147,10 +147,10 @@ section{
 
 .header .navbar a{
     display: block;
-    margin:1.5rem 0;
+    margin:1.2rem 0;
     padding:.7rem;
     border-radius: 5rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
     box-shadow: var(--box-shadow);
     color:var(--black);
 }
