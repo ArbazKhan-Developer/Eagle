@@ -27,6 +27,50 @@ console.log("hello");
 let submit = document.getElementById("submit");
 submit.addEventListener("click", showValues);
 
+const form = document.getElementById("contact-form");
+const sendButton = document.getElementById("submit");
+const statusMessage = document.getElementById("status-message");
+form.addEventListener("submit", function (e) {
+  e.preventDefault(); // prevent actual form submission
+
+  const email = form.email.value.trim();
+  const title = form.title.value.trim();
+
+  if (email === "" || title === "") {
+    statusMessage.textContent = "⚠️ Email and Title fields cannot be empty.";
+    statusMessage.className = "error-message show-message";
+    return;
+  }
+
+  sendButton.disabled = true;
+  sendButton.textContent = "Sending...";
+  statusMessage.textContent = "";
+  console.log("button has disabled");
+
+  emailjs.sendForm("service_s6n9f3q", "template_a2wy96n", this)
+    .then(
+      function () {
+        console.log("sending the alerts");
+
+        // alert("Message sent successfully!");
+        statusMessage.textContent = "✅ Message sent successfully!";
+        statusMessage.className = "success-message show-message";
+        form.reset(); // Clear the form
+      },
+      function (error) {
+        sendButton.disabled = false;
+        sendButton.textContent = "send message";
+        statusMessage.textContent = "❌ Failed to send message.";
+        console.error(error);
+      }
+    )
+    .finally(() => {
+      // Re-enable button and reset text
+      sendButton.disabled = false;
+      sendButton.textContent = "send message";
+    });
+});
+
 function showValues() {
   // window.stop();
 
@@ -47,16 +91,15 @@ function showValues() {
   } else {
     alert("kindly provide a valid EmailID");
   }
-  
 }
 
 function downloadPDF() {
   // URL of your PDF file (can be local or online)
-  const pdfUrl = 'document/resume.pdf'; // Example: 'resume.pdf' or 'https://example.com/file.pdf'
-  
-  const link = document.createElement('a');
+  const pdfUrl = "document/resume.pdf"; // Example: 'resume.pdf' or 'https://example.com/file.pdf'
+
+  const link = document.createElement("a");
   link.href = pdfUrl;
-  link.download = 'resume.pdf'; // Name the file as it will be saved
+  link.download = "resume.pdf"; // Name the file as it will be saved
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);

@@ -48,6 +48,37 @@ section{
     min-height: 100vh;
     padding:2rem;
 }
+#status-message {
+    margin-top: 1rem;
+    display: inline-block;
+    padding:1rem 3.5rem;
+    border-radius: .5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: none;
+    color:var(--black);
+  }
+
+.show-message {
+    display: block;
+    opacity: 1;
+  }
+
+.success-message {
+    display: block;
+    opacity: 1;
+    background-color: #e6f9f0;
+    color: #218c74;
+    border: 2px solid #34caa1;
+  }
+
+.error-message {
+    display: block;
+    opacity: 1;
+    background-color: #ffe6e6;
+    color: #c0392b;
+    border: 2px solid #e74c3c;
+  }
 
 .btn{
     margin-top: 1rem;
@@ -555,6 +586,7 @@ section{
 .credits span{
     color: var(--green);
 }
+
 
 
 

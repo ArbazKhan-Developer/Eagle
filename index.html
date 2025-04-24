@@ -9,7 +9,12 @@
     <!-- font awesome cdn link  -->
     <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("oZp5Sn-TuYytA0Mz6"); // replace with your user ID from EmailJS
+        })();
+    </script>
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
     <title>Arbaz Khan</title>
@@ -78,7 +83,7 @@
                     <h3>10+</h3>
                     <p>Projects</p>
                 </div>
-                
+
                 <div class="box">
                     <button class="btn" onclick="downloadPDF()">Download CV</button>
                 </div>
@@ -260,16 +265,17 @@
 
         <h1 class="heading"> <span>contact</span> me </h1>
 
-        <form action="/">
-            <input type="text" id="name" placeholder="your name" class="box">
-            <input type="email" id="email" placeholder="your email" class="box">
-            <input type="text" id="subject" placeholder="subject" class="box">
-            <textarea name="" id="message" class="box" placeholder="your message" id="" cols="30" rows="10"></textarea>
-
+        <form id="contact-form">
+            <input type="text" id="name" name="name" placeholder="your name" class="box">
+            <input type="email" id="email" name="email" placeholder="your email" class="box">
+            <input type="text" id="subject" name="title" placeholder="subject" class="box">
+            <textarea id="message" name="message" class="box" placeholder="your message" id="" cols="30" rows="10"></textarea>
+            <div class="center">
+                <button type="submit" value="send message" class="btn" id="submit">send message</button>
+            </div>
+            <div class="center" class="warning" id="status-message"></div>
         </form>
-        <div class="center">
-            <button type="submit" value="send message" class="btn" id="submit">send message</button>
-        </div>
+        
         <div class="share">
             <a href="https://touch.facebook.com/abz.khan.3576?ref=bookmarks" target="blank"
                 class="fab fa-facebook-f"></a>
